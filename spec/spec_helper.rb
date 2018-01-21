@@ -1,13 +1,4 @@
-require_relative '../config/commands'
-require_relative '../lib/search/parking_lot'
-
-require_relative '../models/car'
-require_relative '../models/parking_slot'
-require_relative '../models/ticket'
-require_relative '../models/parking_lot'
-require_relative '../models/command'
-
-require_relative '../parking_service'
+require_relative '../initializer'
 
 def park_cars(n)
   parking_tickets = []
