@@ -1,7 +1,5 @@
 module Search
-
   module ParkingLot
-
     STATUS_HEADERS = ['Slot No.', 'Registration No', 'Colour']
 
     def status
@@ -30,7 +28,5 @@ module Search
         puts "Not found"
       end
     end
-
   end
-
 end
