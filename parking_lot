@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+
+require 'bundler'
+require 'rspec'
+require_relative './initializer.rb'
+
+Bundler.with_clean_env do
+  `bundle install`
+end
+
+result = RSpec::Core::Runner.run(['spec'], $stderr, $stdout)
+
+if result > 0
+  puts "This build did not pass all the tests."
+  exit
+else
+  puts "This build passed all the tests. #{"\n"*3}"
+end
+
+begin
+  ParkingService.perform
+rescue Exception => e
+  puts e.message
+end
